@@ -1,0 +1,56 @@
+<h1>Parents#show</h1>
+<!-- <p>Find me in app/views/parents/show.html.erb</p> -->
+<!-- <p>Find me in app/views/activities/show.html.erb</p> -->
+
+<p id="notice"><%= notice %></p>
+
+<div class="well">
+	<p>
+	  <strong>First Name of Parent:</strong>
+	  <%= @parent.first_name %>
+	</p>
+
+	<p>
+	  <strong>Last Name of Parent:</strong>
+	  <%= @parent.last_name %>
+	</p>
+
+    <p>
+    <strong>Parent email:</strong>
+    <%= @parent.email %>
+    </p>
+
+<h2> Location of Parent - Address </h2>
+	<p>
+	  <strong> Street Address:</strong>
+	  <%= @parent.address_street%>
+	</p>
+
+	<p>
+	  <strong> City:</strong>
+	  <%= @parent.address_city%>
+	</p>
+
+	<p>
+	  <strong> Zipcode:</strong>
+	  <%= @parent.address_zipcode%>
+	</p>
+
+	<p>
+	  <strong> State:</strong>
+	  <%= state_name(@parent.address_state)%>
+	</p>
+
+	<p>
+	  <strong> Parent Home Phone Number :</strong>
+	  <%= @parent.phone_home%>
+	</p>
+
+	<p>
+	  <strong> Parent Mobile Phone Number :</strong>
+	  <%= @parent.phone_mobile%>
+	</p>
+
+</div>
+<%= link_to 'Edit', edit_parent_path(@parent) %> |
+<%= link_to 'Back', parents_path %>

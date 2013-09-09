@@ -1,0 +1,54 @@
+ <script type="text/javascript">
+      $('#datetimepicker').datetimepicker({
+        format: 'dd/MM/yyyy hh:mm:ss',
+        language: 'pt-BR'
+      });
+ </script>
+<!-- <p>Find me in app/views/students/new.html.erb</p> -->
+
+<div id='form-wrapper'>
+	<% if flash[:errors] %>
+		<% flash[:errors].each do |error| %>
+			<p class='text-error'><%= error %></p>
+		<% end %>
+	<% end %>
+
+	<h3>Student Information</h3>
+	<%= simple_form_for @student, :html => {:class => 'well form-horizontal'} do |f| %>
+	<div class="row-fluid">
+	  <div class="span4 input-large">
+		  <%= f.input :first_name, label: 'First Name', :html => {:class => 'input-small'} %>
+		  <%= f.input :last_name, label: 'Last Name' %>
+		  <%= f.input :email, label: 'Email' %>
+
+		  <%= f.label :Gender, 'Gender'%>
+		  <label class="radio inline">
+			  <%= f.radio_button :gender, 'M'%>
+			  <%= f.label :gender, 'Male', :value => 'Male' %>
+		  </label>
+		  <label class="radio inline">
+			  <%= f.radio_button :gender, 'F', :checked => 'F' %>
+			  <%= f.label :gender, 'Female', :value => 'Female' %>
+		 </label>
+
+		  <%= f.label :birth_date, 'Student Birthdate'%>
+		  <div class="us_date">
+  			<%= f.date_select :birth_date, {:start_year => Time.now.year - 14, :end_year => 1970, :prompt => true, :order => [:month, :day, :year]} %>
+		  </div>
+	   </div>
+
+	  <div class="span4 input-large">
+		  <%= f.input :home_school_name, label: 'Student Home School Name' %>
+		  <%= f.input :school_address_street, label: 'School Street Address' %>
+		  <%= f.input :school_address_city, label: 'School City Address' %>
+		  <%= f.input :school_address_zipcode, label: 'School Zip Code' %>
+		  <%= f.select :school_address_state, us_states %> 
+		  <%= f.input :school_phone_number, label: 'School Phone' %>
+
+		  <%= f.button :submit, :input_html => { :value => "\nSave"}, class: 'btn btn-primary'%>
+	</div>
+
+	<% end %>
+	</div>
+
+</div>

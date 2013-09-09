@@ -1,0 +1,45 @@
+<!-- <h1>Parents#index</h1>
+<p>Find me in app/views/parents/index.html.erb</p> -->
+<h3 class="pull-left">List of all Parents</h3>
+
+<%= link_to 'To add a new Parent click here', new_parent_path,:class => "pull-right" %>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email address</th>
+      <th>Street Address </th>
+      <th>City</th>
+      <th>Zipcode</th>
+      <th>State</th>
+      <th>Phone Home</th>
+      <th>Phone Mobile</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parents.each do |parent| %>
+      <tr>
+        <td><%= parent.first_name %></td>
+        <td><%= parent.last_name %></td>
+        <td><%= parent.email %></td>
+        <td><%= parent.address_street %></td>
+        <td><%= parent.address_city %></td>
+        <td><%= parent.address_zipcode %></td>
+        <td><%= state_name(parent.address_state) %></td>
+        <td><%= parent.phone_home%></td>
+        <td><%= parent.phone_mobile%></td>
+        <td><%= link_to 'Show', parent_path(parent.id) %></td>
+        <td>
+          <a href="<%= edit_parent_path(parent.id) %>" data-reveal-id="parent_edit_modal" class="btn btn-mini">Edit</a>
+        </td>
+        <td><%= link_to 'Delete', parent, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>

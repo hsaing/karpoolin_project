@@ -1,0 +1,39 @@
+
+<h3>Activity Information</h3>
+<% @activities.each do |activity| %>
+        <%= activity.activity_name %>
+        <%= activity.activity_start_date.strftime("%B-%d-%Y")%>
+        <%= activity.activity_end_date.strftime("%B-%d-%Y")%>
+        <%= activity.activity_start_time.strftime("%I:%M %p")%>
+        <%= activity.activity_end_time.strftime("%I:%M %p")%>
+        <%= activity.address_street %>
+        <%= activity.address_city %>
+        <%= activity.address_zipcode %>
+        <%= state_name(activity.address_state) %>
+        <%= activity.phone_number %>
+	<%end %>
+
+<%= simple_form_for [@activity, @carpooler], :html => {:class => 'well pull-left form-inline'} do |f| %>
+	<%= f.label :student_id, 'Student id'%>
+	<%= f.association :student, label_method: :first_name, value_method: :id %>
+	
+	<% if false %>	
+	<%= f.collection_select(:student_id, @students, :id, :student_full_name,{:include_blank => true}, {:class =>'select'}, :prompt => "Select a student")%>
+ 	
+
+	<%= f.label :home_school_name, 'Student School Name'%>
+	<%= @student.home_school_name %>
+
+	<%= f.label :parent_full_name, 'Parent Full Name'%>
+	<%= f.collection_select(:parent_id, Parent.all, :id, :parent_full_name,{:include_blank => true}, {:class =>'select'}, :prompt => "Select  Parent")%>
+
+	<%= f.input :need_ride, as: :check_box, collection: [['Need Ride', T], ['No Ride', F]] %>
+
+	<%= f.label :notes, 'Notes'%>
+  	<%= f.text_area :description, :rows => 3 %>
+	<% end %>
+  	<%= f.button :submit, value:'Submit', class: 'btn'%>
+
+
+<% end %>
+

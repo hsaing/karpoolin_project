@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  parent_id: 
+  activity_id: 
+  student_id: 
+  need_ride: false
+  notes: MyString
+  can_drive_up: false
+  can_drive_return: false
+
+two:
+  parent_id: 
+  activity_id: 
+  student_id: 
+  need_ride: false
+  notes: MyString
+  can_drive_up: false
+  can_drive_return: false

@@ -1,0 +1,44 @@
+<!-- <p>Find me in app/views/parents/new.html.erb</p> -->
+
+<div id='form-wrapper'>
+	<% if flash[:errors] %>
+		<% flash[:errors].each do |error| %>
+			<p class='text-error'><%= error %></p>
+		<% end %>
+	<% end %>
+</div>
+
+	<h3>Parent Information</h3>
+	<%= simple_form_for @parent, :html => {:class => 'well form-horizontal'} do |f| %>
+	<div class="row-fluid">
+		<div class="span4 input-large">
+			  <%= f.input :first_name, label: 'First Name' %>
+			</br>
+			  <%= f.input :last_name, label: 'Last Name' %>
+			</br>
+			  <%= f.input :email, label: 'Email' %>
+			</br>
+			  <%= f.input :password, label: 'Password' %>
+			</br>
+			  <%= f.input :password_confirmation, label: 'Confirm Password' %>
+			</br>
+		</div>	
+
+		<div class="span4 input-large pull-right">
+		    <%= f.input :address_street, label: 'Street Address' %>
+			</br>
+			  <%= f.input :address_city, label: 'City Address' %>
+			</br>
+			  <%= f.label :address_state, 'Address State'%>
+			  <%= f.select :address_state, us_states %> 
+			</br>
+			  <%= f.input :address_zipcode, label: 'Zip Code' %>
+			</br>
+			  <%= f.input :phone_home, label: 'Home Phone' %>
+			</br>
+			  <%= f.input :phone_mobile, label: 'Mobile Phone' %>
+			</br>
+			  <%= f.button :submit, value:'Save', class: 'btn btn-primary'%>
+		</div>
+	<% end %>
+</div>

@@ -1,0 +1,64 @@
+<script>
+      $('.datepicker').datepicker({
+          format: "yyyy-mm-dd",
+          todayHighlight: true,
+          todayBtn: 'linked',
+          autoclose: true
+      }); ;
+</script>
+
+<div id='form-wrapper'>
+	<% if flash[:errors] %>
+		<% flash[:errors].each do |error| %>
+			<p class='text-error'><%= error %></p>
+		<% end %>
+	<% end %>
+</div>
+
+<h3>Activity Information</h3>
+
+<%= simple_form_for @activity, :html => {:class => 'well form-horizontal'} do |f| %>
+<div class="row-fluid">
+	<div class="span4 input-large">
+		  <%= f.input :activity_name, label: 'Activity Name', :html => {:class => 'input-small'} %>
+		</br>
+		  <%= f.label :activity_start_date, 'Activity Start Date'%>
+		  <div class="us_date">
+  			<%= f.date_select :activity_start_date, label: 'Activity Start Date' %>
+  		  </div>
+  		  </br>
+		  <%= f.label :activity_end_date, 'Activity End Date'%>
+		  <div class="us_date">
+		  	<%= f.date_select :activity_end_date, label: 'Activity End Date' %>
+		  </div>
+		</br>
+		<div class="us_time">
+			<%= f.label :activity_start_time, 'Activity Start Time'%>
+			<%= f.time_select("activity_start_time", prompt:{hour: 'Hour', minute: 'Minute'},ampm: true) %>
+		</div>
+
+		</br>
+		<div class="us_time">
+			<%= f.label :activity_end_time, 'Activity End Time'%>
+			<%= f.time_select("activity_end_time", prompt: {hour: 'Hour', minute: 'Minute'}, ampm: true ) %>
+		</div>
+	 </div>
+
+	 <div class="span4 input-large">
+		  <%= f.input :address_street, label: 'Activity Street Address' %>
+			</br>
+		  <%= f.input :address_city, label: 'Activity City Address' %>
+		  </br>
+		  <%= f.input :address_zipcode, label: 'Activity Zip Code' %>
+		  </br>
+
+		  <%= f.label :address_state, 'Address State'%>
+		  <%= f.select :address_state, us_states %> 
+		  </br>
+		  </br>
+		  <%= f.input :phone_number, label: 'Activity Contact Phone' %>
+		  </br>
+		  <%= f.button :submit, value:'Save', class: 'btn btn-primary'%>
+	</div>
+<% end %>
+</div>

@@ -1,0 +1,57 @@
+<div id="student_edit_modal" class="reveal-modal">
+<!-- <h1>Students#edit</h1> -->
+
+	<div id='form-wrapper'>
+		<% if flash[:errors] %>
+			<% flash[:errors].each do |error| %>
+				<p class='text-error'><%= error %></p>
+			<% end %>
+	    <% end %>
+	</div>
+
+	<h3>Edit Student Information</h3>
+	<%= simple_form_for @student, :html => {:class => ' well form-horizontal'} do |f| %>
+	<div class="row-fluid">
+	  <div class="span4 input-large">
+		  <%= f.input :first_name, label: 'First Name', :html => {:class => 'input-small'} %>
+		  <%= f.input :last_name, label: 'Last Name' %>
+		  <%= f.input :email, label: 'Email' %>
+		
+		  <%= f.label :Gender, 'Gender' %>
+		  <%=(@student.gender == "M" ? "Male" : "Female") %>
+		</br>
+
+		  <label class="radio inline">
+			  <%= f.radio_button :gender, 'M'%>
+			  <%= f.label :gender, 'Male', :value => 'Male' %>
+		  </label>
+
+		  <label class="radio inline">
+			  <%= f.radio_button :gender, 'F', :checked => 'F' %>
+			  <%= f.label :gender, 'Female', :value => 'Female' %>
+		 </label>
+
+		  <div class="us_date">
+		  <%= f.input :birth_date, label: 'Student Birthdate' %>
+		</div>
+	 </div>
+	  <div class="span4 input-large">
+		  <%= f.input :home_school_name, label: 'Student Home School Name' %>
+		  <%= f.input :school_address_street, label: 'School Street Address' %>
+		  <%= f.input :school_address_city, label: 'School City Address' %>
+		  <%= f.input :school_address_zipcode, label: 'School Zip Code' %>
+		  <%= f.label :school_address_state, 'State' %>
+		  <%= f.select :school_address_state, us_states, label: 'State'%> 
+		  <%= f.input :school_phone_number, label: 'School Phone' %>
+
+		  <%= f.button :submit, :input_html => { :value => "\nSave"}, class: 'btn'%>
+	</div>
+
+	<% end %>
+	</div>
+<!-- old edit below -->
+<%= link_to 'Show', @student %> |
+<%= link_to 'Back', students_path %>
+</div>
+
+

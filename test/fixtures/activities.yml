@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  activity_name: MyString
+  activity_start_date: 2013-08-17 14:51:35
+  activity_end_date: 2013-08-17 14:51:35
+  activity_start_time: 2013-08-17 14:51:35
+  activity_start_time: 2013-08-17 14:51:35
+  activity_end_time: 2013-08-17 14:51:35
+  address_street: MyString
+  address_city: MyString
+  address_zipcode: 1
+  address_state: MyString
+  phone_number: MyString
+  parent_id: 
+
+two:
+  activity_name: MyString
+  activity_start_date: 2013-08-17 14:51:35
+  activity_end_date: 2013-08-17 14:51:35
+  activity_start_time: 2013-08-17 14:51:35
+  activity_start_time: 2013-08-17 14:51:35
+  activity_end_time: 2013-08-17 14:51:35
+  address_street: MyString
+  address_city: MyString
+  address_zipcode: 1
+  address_state: MyString
+  phone_number: MyString
+  parent_id: 

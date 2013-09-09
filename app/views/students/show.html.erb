@@ -1,0 +1,59 @@
+
+    <h3>Student Information</h3>
+<!-- <h1>Students#show</h1>
+<p>Find me in app/views/students/show.html.erb</p> -->
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @student.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @student.last_name %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= (@student.gender == "M" ? "Male" : "Female")%>
+</p>
+
+<p>
+  <strong>Email address:</strong>
+  <%= @student.email%>
+</p>
+
+<p>
+  <strong>Home School Name :</strong>
+  <%= @student.home_school_name%>
+</p>
+
+<p>
+  <strong> School Address Street :</strong>
+  <%= @student.school_address_street%>
+</p>
+
+<p>
+  <strong> School - City:</strong>
+  <%= @student.school_address_city%>
+</p>
+
+<p>
+  <strong> School Zipcode:</strong>
+  <%= @student.school_address_zipcode%>
+</p>
+
+<p>
+  <strong> School - State:</strong>
+  <%= state_name(@student.school_address_state)%>
+</p>
+
+<p>
+  <strong> School Phone Number :</strong>
+  <%= @student.school_phone_number%>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>

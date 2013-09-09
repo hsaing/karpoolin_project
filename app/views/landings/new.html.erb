@@ -1,0 +1,123 @@
+<!-- <div class="navbar navbar-inverse navbar-fixed-top">
+  	<div class="navbar-inner">
+	    <div class="container">
+	      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="brand" href="http://getbootstrap.com/2.3.2/examples/hero.html#"></a>
+	        <div class="nav-collapse collapse">
+	            <ul class="nav">
+	              <li class="active"><a href="">Home</a></li>
+	              <li class="active"><a href="#" data-reveal-id="myModal1">About Us</a></li>
+	              <li class="active"><a href="#" data-reveal-id="myModal2">Contact</a></li>
+				</ul>
+	            <form action="login" class="navbar-form pull-right">
+		            <input class="span2" type="text" placeholder="Email">
+		            <input class="span2" type="password" placeholder="Password">
+		            <button type="submit" class="btn">Sign in</button>
+	            </form>
+	        </div>
+	    </div>
+  	</div>
+</div> -->
+
+<!-- The ABOVE CODES ARE REPLACED WITH  FILE NAME "_header.html.erb" UNDER "LAYOUTS" FOULDER -->
+
+<!-- Modal form for "About US" -->
+<div id="myModal1" class="reveal-modal">
+		<h2>Our Mission</h2>
+		<img border="1" src="/assets/1.jpg" alt="carpool" width="325" align="left">
+		<p class="a">We strongly believe that every young students should have access to safe transport to and from schools and other school-related activities or events. By sharing a ride provided by other parents, we can save gas and money, reduce auto emissions, and at the same time meet new friends. We can share experiences and help each other. In this sense, everyone benefits!</p><br>
+
+		<h2>Our Product</h2>
+		<p class="b">We want to make carpooling for young students easy, safe and accessible to all. With just a few clicks, parents can offer available seats to other kids or arrange to have their own kids to be picked up by other parents. The website is currently accessable from computers, laptops or mobile devices.</p>
+		<a class="close-reveal-modal">&#215;</a>		
+</div>      
+<!-- End of About US Modal  -->
+
+<!-- Modal form for "Contact" -->
+<div id="myModal2" class="reveal-modal">
+		<h2>Contact</h2>
+		<p class="c">We would like to hear from you. Drop us a line with any comments, suggestions, or questions.</p>
+		<!-- <img border="1" src="/assets/contact_2.jpg" alt="carpool" width="150" align="right"> -->
+		<a class="close-reveal-modal">&#215;</a>
+		<div id="s">
+			<form action="" method="POST">
+				<label for="user_name">Your Name:</label>
+				<input type="text" id="your_name" name="your_name"/>
+					
+				<label for="email_address">Your Email:</label>
+				<input type="text" id="email" name="email" value="" />
+							
+				<label for="con_password">Subject:</label>
+				<input type="password" id="con_password" name="con_password" value="" />
+
+				<label for="message">Message:</label>
+				<textarea rows="3" cols="50" name="comment" form="usrform"></textarea>
+				<input id="signup_1" type="submit" class="btn btn-primary" name="submit" value="Submit" />
+			</form>	
+	  	</div>  
+</div>      
+<!-- End of Contact Modal  -->
+
+
+<div class="container">
+<!-- Main hero unit for a primary marketing message or call to action -->
+	<div class="hero-unit">
+	  	<!-- <img border="1" src="/assets/get-attachment.jpg" alt="carpool" width="250" height="228"> -->
+	  	<!-- <img border="1" src="/assets/3.jpg" alt="carpool" width="300" height="300"> -->
+	  	<p></p><b/>
+
+	  	<img border="1" src="/assets/1.jpg" alt="carpool" width="450" height="340">
+	    <h1>Karpoolin</h1>
+	    <p> Carpooling for young students saves us all time, and it’s better for our children, better for the environment, and better for our communities. For parents, if your kids need a safe ride or if you personally can offer a safe ride to other kids as well, please register.</p>
+	    <!-- <img border="1" src="/assets/3.jpg" alt="carpool" width="400" height="300"> -->
+		<!-- Button to trigger modal -->
+	    <p><a href="#" data-reveal-id="myModal" class="btn btn-primary">Register >></a></p>
+
+	   	<!-- footnote -->
+	   	
+	</div>
+	<div id="footnote">
+			<center> 
+		   	   	<p class="footnote_1">EST. 2013 @ All Rights Reserved.</p>
+		   	</center>
+		</div>   	
+	
+		<!-- <a cl<b/>ass="btn btn-large btn-success" href="#">Register</a> -->   
+
+	<div id="myModal" class="reveal-modal">
+		<h3>Parent Registration</h3>
+		<a class="close-reveal-modal">&#215;</a>
+		<div>
+			<form action="/login/registration_process" method="POST">
+
+				<label for="user_name">First Name:</label>
+				<input type="text" id="first_name" name="first_name"/>
+					
+				<label for="user_name">Last Name:</label>
+				<input type="text" id="last_name" name="last_name" value="" />
+				
+				<label for="email_address">Your Email:</label>
+				<input type="text" id="email" name="email" value="" />
+			
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" value="" />
+			
+				<label for="con_password">Confirm Password:</label>
+				<input type="password" id="con_password" name="con_password" value="" />
+
+				<label for="con_address">Address:</label>
+				<input type="text" id="address" name="adress" value="" />
+
+				<label for="con_number">Contact Number:</label>
+				<input type="text" id="number" name="contact_number" value="" />
+				 <input type="checkbox" name="term" value="term"> I agree to the <a href="">Terms of Use</a> and <a href="">Private Policy</a> 
+				<input id="signup" type="submit" class="btn btn-primary" name="submit" value="Sign Up" />
+			</form>	
+	  	</div>  
+	</div>
+</div>      
+      
