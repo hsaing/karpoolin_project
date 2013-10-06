@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Carpool1</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+  <head>
+    <title>Karpoolin For Kids</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
 
-  <%= javascript_include_tag '//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js' %>
-  <%= stylesheet_link_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/smoothness/jquery-ui.css" %>
+    <%= javascript_include_tag '//ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js' %>
+    <%= stylesheet_link_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/smoothness/jquery-ui.css" %>
 
-  <script type="text/javascript">
-    $('.datetimepicker').datetimepicker({
-      language: 'en',
-    });
-  </script>
-</head>
-<body>
-<%= render 'layouts/header' %>
-<div class="container">
-<%= yield %>
-
-</body>
+    <script type="text/javascript">
+      $('.datetimepicker').datetimepicker({
+        language: 'en',
+      });
+    </script>
+  </head>
+  <body>
+      <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
 </html>
